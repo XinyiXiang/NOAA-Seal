@@ -3,4 +3,6 @@ timm
 nbnb
 mmpycocotools
 omegaconf
-
+opencv-python
+scipy
+torchvision
