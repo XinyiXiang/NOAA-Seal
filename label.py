@@ -5,11 +5,11 @@ this script is used to extrct YOLO conforming style labels
 Command:
 python3 label.py <Training.csv>
 
-In referenced to BOSSTraining.csv under Polar/Training
+In reference to BOSSTraining.csv and BOSSValidation.csv under Polar/Training
 """
 
-INPUT_CSV_PATH = "../../Downloads/boss_training.csv"
-OUTPUT_CSV_PATH = "../../Downloads/boss_training_output.csv"
+INPUT_CSV_PATH = "../../Downloads/boss_validation.csv"
+OUTPUT_CSV_PATH = "../../Downloads/boss_validation_output.csv"
 
 import os
 import argparse
