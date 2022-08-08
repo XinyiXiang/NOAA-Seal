@@ -8,23 +8,39 @@ python3 label.py <Training.csv>
 In referenced to BOSSTraining.csv under Polar/Training
 """
 
+INPUT_CSV_PATH = "../../Downloads/boss_training.csv"
+OUTPUT_CSV_PATH = "../../Downloads/boss_training_output.csv"
+
 import os
 import argparse
 
 import pandas as pd
 
-def label(self, csv):
-	df = pd.DataFrame(columns=['obj_class_id', 'x', 'y', 'width', 'height'])
+def label(lines):
+	df = pd.DataFrame(columns=['file_name','obj_class_id', 'x', 'y', 'width', 'height'])
 
 
-	for row in csv:
-		df = df.append({'obj_class_id': row.split(",")[6], 'x': row.split(",")[2], 'y':row.split(",")[3], 'width':row.split(",")[4]-row.split(",")[2], 'height':row.split(",")[5]-row.split(",")[3]}
-			
+	for row in lines:
+		full_name = row.split(",")[6]
 
+		df = df.append(
+			{'file_name': row.split(",")[0].split(".")[0], 
+			'obj_class_id': full_name.split("_")[1], 
+			'x': row.split(",")[2], 
+			'y': row.split(",")[3], 
+			'width':int(row.split(",")[4])-int(row.split(",")[2]), 
+			'height':int(row.split(",")[5])-int(row.split(",")[3])},
+			ignore_index = True
+		)
 
-if name == "__main__":
+	res = df.to_csv(OUTPUT_CSV_PATH)
+
+	return res
+
+if __name__ == "__main__":
 	
 	# Extract class id, x-coor, y-coor, width and height from train file csv
-	train_csv = pd.read_csv("C:\Users\polar\BOSS_Color_Training\training")
+	with open(INPUT_CSV_PATH) as file:
+		train_csv_lines = file.readlines()
 
-	label(train_csv)
+	label(train_csv_lines)
