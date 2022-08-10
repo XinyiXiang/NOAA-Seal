@@ -1,0 +1,7 @@
+train: 
+test: 
+valid: 
+#Classes
+nc: 2 
+#classes names
+namesnames: ['seal', 'pup']

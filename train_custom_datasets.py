@@ -72,8 +72,16 @@ def register_custom_datasets():
     register_coco_instances("voc_train", {}, TRAIN_JSON, TRAIN_PATH)
     register_coco_instances("voc_val", {}, VAL_JSON, VAL_PATH)
 
-    # ADD YOUR DATASET CONFIG HERE
-    # dataset names registered must be unique, different than any of above
+    # Seal dataset
+    DATASET_ROOT = "polar\BOSS_color_training"
+    ANN_ROOT = DATASET_ROOT
+    TRAIN_PATH = os.path.join(DATASET_ROOT, "JPEGImages")
+    VAL_PATH = os.path.join(DATASET_ROOT, "JPEGImages")
+    TRAIN_JSON = os.path.join(ANN_ROOT, "annotations_train.json")
+    VAL_JSON = os.path.join(ANN_ROOT, "annotations_val.json")
+
+    register_coco_instances("seal_train", {}, TRAIN_JSON, TRAIN_PATH)
+    register_coco_instances("seal_val", {}, VAL_JSON, VAL_PATH)
 
 
 register_custom_datasets()
