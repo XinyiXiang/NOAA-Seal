@@ -3,7 +3,7 @@
 
 ![Screen Shot 2022-08-30 at 11 07 17 AM](https://user-images.githubusercontent.com/30137615/187511219-dc4096e4-ff76-4938-99e2-37f0133c3e9a.png)
 
-This is a research project that integrates mathematics with the science that informs fishery managers.
+This is the codebase of a research project that integrates mathematics with the science that informs fishery managers authored by Xinyi Xiang, Helena Williams and Erin Moreland.
 
 ## Major Steps Taken
 ### Step1:
